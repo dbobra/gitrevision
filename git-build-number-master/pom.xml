@@ -56,6 +56,7 @@
     </dependencies>
 
     <build>
+    <finalName>git-revision - ${buildNumber}</finalName> 
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -81,7 +82,7 @@
                 </executions>
             </plugin>
 
-            <plugin>
+           <!--  <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
@@ -91,19 +92,19 @@
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                         <manifestEntries>
-                            <!-- Adds ${buildNumber} as an entry in the manifest file -->
+                            Adds ${buildNumber} as an entry in the manifest file
                             <Git-SHA-1>${buildNumber}</Git-SHA-1>
                         </manifestEntries>
                     </archive>
                     <webResources>
                         <webResource>
-                            <!-- Adds ${buildNumber} to index.html -->
+                            Adds ${buildNumber} to index.html
                             <directory>${basedir}/src/main/webapp</directory>
                             <filtering>true</filtering>
                         </webResource>
                     </webResources>
                 </configuration>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -117,12 +118,12 @@
             </plugin>
         </plugins>
 
-        <resources>
+     <!--    <resources>
             <resource>
-                <!-- Adds ${buildNumber} to buildNumber.properties -->
+                Adds ${buildNumber} to buildNumber.properties
                 <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
-        </resources>
+        </resources> -->
     </build>
 </project>
